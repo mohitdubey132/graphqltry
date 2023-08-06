@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import NavigationBar from "./components/global/navigationbar";
+import Charactor from "./components/global/Charactor";
+import {Router,Route, Routes} from 'react-router-dom'
+import SelectedCharactor from "./components/global/SelectedCharactor";
 
 function App() {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <div className="w-full max-w-[1440px] h-3/4 items-center justify-center text-center">
+    <NavigationBar/>
+    <div className="items-center justify-center mx-auto w-[90%] mt-[6rem] ">
+{/* <Charactor/> */}
+ </div>
+<Routes>
+  <Route path="/" element={<Charactor/>}/>
+  <Route path="/:id" element={<SelectedCharactor/>}/>
+  
+</Routes>
+
+   
+  </div>
   );
 }
 
